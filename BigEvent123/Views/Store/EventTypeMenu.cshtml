@@ -1,0 +1,10 @@
+﻿@model IEnumerable<BigEvent123.Models.Event>
+<ul id="categories">
+    @foreach (var events in Model)
+    {
+        <li>@Html.ActionLink(events.EventName,
+                "Browse", "Store", 
+                new { Event = events.EventName }, null)
+        </li>
+    }
+</ul>

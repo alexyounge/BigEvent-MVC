@@ -1,0 +1,83 @@
+﻿@model IEnumerable<BigEvent123.Models.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+                      <div class="managerWrapper">
+                          <div class="managerHeader">
+                              <h2>Manager Interface</h2>
+                          </div>
+
+                          <div class="managerContentsWrapper">
+                              <div class="createNewEventBtn">
+                                  
+                                      @Html.ActionLink("Create New Event", "Create")
+                                  @Html.ActionLink("Statistics", "Stats", "StoreManager")
+                              </div>
+                              <br /><div class="searchText">Search for an Event</div>  <br /> 
+                              <div class="managerSearch">
+                                  @using (Html.BeginForm("Index", "Event", FormMethod.Get))
+                                  {
+                                      @Html.DropDownList("eventType", "All")
+                                      @Html.TextBox("searchString")
+                                        
+                                             <input type="submit" value="Filter" />
+                                        
+                                  }
+                              </div>
+                              <br />
+                              <table>
+                                  <tr class="managertableHeaders">
+                                      <th>
+                                          EventType
+                                      </th>
+                                      <th>
+                                          EventName
+                                      </th>
+                                      <th>
+                                          EventDate
+                                      </th>
+                                      <th>
+                                          Venue
+                                      </th>
+                                      <th>
+                                          SeatsRemaining
+                                      </th>
+                                      <th></th>
+                                      <th></th>
+                                  </tr>
+
+                              
+                                       @foreach (var item in Model)
+{
+    <tr class="managerReturnINFO">
+        <td>
+            @Html.DisplayFor(modelItem => item.EventType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Venue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeatsRemaining)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EventId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.EventId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.EventId })
+        </td>
+        <td>
+            @Html.ActionLink("Edit Ticket Details", "Index", "StoreManager")
+        </td>
+    </tr>
+
+}
+
+</table>
+                          </div>
+                      </div>

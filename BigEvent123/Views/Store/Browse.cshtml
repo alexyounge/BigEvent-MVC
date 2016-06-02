@@ -1,0 +1,19 @@
+﻿@model BigEvent123.Models.Event
+
+@{
+    ViewBag.Title = "Browse";
+}
+<div class="browseWrapper">
+    <div class="browseTitle"><h2>@Model.EventName</h2></div>
+
+    <div class="browseResults">
+        <ul>
+            @foreach (var tickets in Model.Tickets)
+            {
+                <li>
+                    @Html.ActionLink(tickets.TicketName, "Details", new { id = tickets.TicketsId })
+                </li>
+            }
+        </ul>
+    </div>
+</div>

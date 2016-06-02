@@ -1,0 +1,83 @@
+﻿@model IEnumerable<BigEvent123.Models.Event>
+
+@{
+    ViewBag.Title = "Ticket Store";
+}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script>
+        $(function () {
+           
+           // $(".datefield").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+            $.datepicker.formatDate("dd-mm-yy");
+        });
+    </script>
+
+    <div class="managerWrapper">
+    <div class="managerHeader">
+        <h2>Store</h2>
+    </div>
+    <div class="searchText">Search for an Event</div>  <br />
+    <div class="storeSearch">
+        @using (Html.BeginForm("Index", "Store", FormMethod.Get))
+{
+    <p>
+        Event Type: @Html.DropDownList("eventType", "All")
+        Venue:  @Html.DropDownList("eventVenue", "All")
+        
+        @Html.TextBox("searchString")
+        <input type="submit" value="Filter" />
+    </p>
+            
+               <p>
+
+         Event Date:  @Html.TextBox("searchDateString","", new { id = "datepicker" })     
+        <input type="submit" value="Filter" />
+        
+    </p>    
+}
+        </div>
+        <table class="storeTable">
+            <tr class="tableHeaders">
+                <th>
+                    Event Name
+                </th>
+                <th>
+                    Event Type
+                </th>
+                <th>
+                    Event Date
+                </th>
+                <th>
+                    Venue
+                </th>
+                <th></th>
+            </tr>
+
+
+            @foreach (var events in Model)
+            {
+
+                <tr class="resultsTable">
+                    <td>
+                        @Html.DisplayFor(modelItem => events.EventName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => events.EventType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => events.EventDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => events.Venue)
+                    </td>
+                    <td>
+                        <div class="prices">@Html.ActionLink("Ticket Prices >>", "Browse", new { events = events.EventName })</div>
+                    </td>
+                </tr>
+            }
+
+        </table>
+</div>

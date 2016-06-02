@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Accessibility";
+}
+
+<div class="athletesContent">
+    <div class="athletesBar">
+        Accessibility 
+    </div>
+    <div class="athleteContainer">
+        <div class="athlete1">
+            <div class="athlete1IMG">
+                <img src="../../Content/Images/wheelchair.jpg" />
+            </div>
+            <div class="athlete1INFO">
+                <div class="athletesTitle"> Introduction </div>
+                <div class="athleteInfo">
+                    The Big Event is committed to ensuring that services are accessible to visitors with disabilities. Please contact us if you have any comments that would help us improve our service.
+                </div>
+            </div>
+        </div>
+        <div class="athlete2">
+            <div class="athlete2IMG">
+                <img src="../../Content/Images/parking.JPG" />
+            </div>
+            <div class="athlete2INFO">
+                <div class="athletesRTitle">PARKING</div>
+                <div class="athleteInfo">
+                    Disabled parking bays are available in the main car park closest to the building. The car park operates on a first come first served basis only for all parking spaces. 
+                    Blue badge holders must display their blue badges at all times whilst parked.
+                </div>
+            </div>
+        </div>
+        <div class="athlete3">
+            <div class="athlete3IMG">
+                <img src="../../Content/Images/GuideDog.jpg" />
+            </div>
+            <div class="athlete3INFO">
+                <div class="athletesTitle">ASSISTANCE DOGS</div>
+                <div class="athleteInfo">
+                    Assistance dogs are welcome, but visitors are asked to bear in mind the noise levels at these sporting events and the potential use of special effects including pyrotechnics might effect the guidedog or yourself. 
+                </div>
+            </div>
+        </div>
+        
+        <button onclick="toggle80ZoomScreen()">Zoom 80%</button>
+        
+        <button onclick="toggle150ZoomScreen()">Zoom 150%</button>
+        
+        <button onclick="toggle110ZoomScreen()">Zoom 110%</button>
+        
+        <button onclick="toggle125ZoomScreen()">Zoom 125%</button>
+            
+    </div>
+</div>
+
+<script type="text/javascript">
+    function toggle80ZoomScreen() {
+        document.body.style.zoom = "80%";
+} 
+</script>
+
+<script type="text/javascript">
+    function toggle110ZoomScreen() {
+        document.body.style.zoom = "110%";
+    }
+</script>
+
+<script type="text/javascript">
+    function toggle125ZoomScreen() {
+        document.body.style.zoom = "125%";
+    }
+</script>
+
+<script type="text/javascript">
+    function toggle150ZoomScreen() {
+        document.body.style.zoom = "150%";
+    }
+</script>

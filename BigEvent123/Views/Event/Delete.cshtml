@@ -1,0 +1,42 @@
+﻿@model BigEvent123.Models.Event
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="managerCreateWrapper">
+    <div class="managerCreateHeader">
+        <h2>Event Details</h2>
+    </div>
+    <fieldset>
+        <legend></legend>
+
+
+        <div class="display-field">
+            <b>Event Type:</b>  @Html.DisplayFor(model => model.EventType)
+        </div>
+
+        <div class="display-field">
+            <b> Event Name:</b>  @Html.DisplayFor(model => model.EventName)
+        </div>
+
+        <div class="display-field">
+            <b>Event Date:</b> @Html.DisplayFor(model => model.EventDate)
+        </div>
+        <div class="display-field">
+            <b> Venue:</b>  @Html.DisplayFor(model => model.Venue)
+        </div>
+        <div class="display-field">
+            <b>Seats Remaining:</b> @Html.DisplayFor(model => model.SeatsRemaining)
+        </div>
+    </fieldset>
+    
+    @using (Html.BeginForm())
+    {
+        <div class="managerDeleteBTNS">
+        <input type="submit" value="Delete" />
+        @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+    <br />
+</div>

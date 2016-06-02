@@ -1,0 +1,46 @@
+﻿
+@model IEnumerable<BigEvent123.Models.Order>
+
+@{
+    ViewBag.Title = "Stats";
+}
+
+                          @using WebMatrix.Data;
+@{
+    var filename = "../../Content/Images/SeatsRemaining.jpg";
+    var db = Database.Open("BigEvent123");
+    var data = db.Query("SELECT EventName, SeatsRemaining FROM Events");
+    String orderString = "Orders";
+    
+    var myChart = new Chart(width: 600, height: 400)
+        .AddTitle("Tickets Remaining")
+        .DataBindTable(dataSource: data, xField: "EventName")
+        .Save(filename);
+
+
+                         
+    var filename2 = "../../Content/Images/TicketsSold.jpg";
+    var data2 = db.Query("SELECT EventName FROM Events");
+    var data3 = db.Query("SELECT COUNT(*) FROM Orders");
+    
+    var myChart2 = new Chart(width: 600, height: 400)
+        .AddTitle("Total Orders")
+        .DataBindTable(dataSource: data3, xField: "")
+        .Save(filename2);
+
+
+        }
+@*  *@
+
+<div class="storemanagerWrapper">
+                          <div class="storemanagerHeader">
+                              <h2>Statistics</h2> </div>
+                <div> <img src="../../Content/Images/SeatsRemaining.jpg" alt="some_text"></div>
+                <div> <img src="../../Content/Images/TicketsSold.jpg" alt="some_text"></div>
+             
+             
+
+
+
+   
+    </div>

@@ -1,0 +1,25 @@
+﻿@model BigEvent123.Models.Tickets
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="storeDetailsWrapper">
+    <div class="detailsHeader"><h2>@Model.TicketName </h2></div>
+
+    <div class="event-details">
+        <p>
+            @Model.Event.EventName
+            @Model.TicketName
+        </p>
+
+        <p>
+            Price: £
+            @String.Format("{0:F}", Model.Price)
+        </p>
+
+        <div class="detailsButton">
+            @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.TicketsId, eventid = Model.Event.EventId}, "")
+        </div>
+    </div>
+</div>

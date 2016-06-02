@@ -1,0 +1,7 @@
+﻿@if(Request.IsAuthenticated) {
+
+    @:@Html.ActionLink("My Account" ,"OrderDetails", "Order", new { username = User.Identity.Name}, "")
+}
+else {
+
+}

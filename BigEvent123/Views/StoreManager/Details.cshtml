@@ -1,0 +1,31 @@
+﻿@model BigEvent123.Models.Tickets
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="managerCreateWrapper">
+    <div class="managerCreateHeader">
+        <h2>Details</h2>
+        </div>
+
+        <fieldset>
+            <legend></legend>
+
+           
+            <div class="display-field">
+                <b>Event:</b> @Html.DisplayFor(model => model.Event.EventName)
+            </div>
+
+            
+            <div class="display-field">
+               <b>Ticket Type:</b> @Html.DisplayFor(model => model.TicketName)
+            </div>
+
+        </fieldset>
+    <br />
+    <div class="managerDetailsBTNS">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.EventId })
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    <br />
+</div>

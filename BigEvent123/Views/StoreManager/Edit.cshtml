@@ -1,0 +1,52 @@
+﻿@model BigEvent123.Models.Tickets
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="managerEditWrapper">
+    <div class="managerEditHeader">
+        <h2>Edit a Ticket</h2>
+    </div>
+        <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+    <div class="managerEditFormWrapper">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <fieldset>
+                <legend></legend>
+
+                @Html.HiddenFor(model => model.TicketsId)
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EventId, "Select an Event")
+                </div>
+                <div class="store-editor-field">
+                    @Html.DropDownList("EventId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.EventId)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.TicketName)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.TicketName)
+                    @Html.ValidationMessageFor(model => model.TicketName)
+                </div>
+                <div class="price-editor-label">
+                    @Html.LabelFor(model => model.Price)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Price)
+                    @Html.ValidationMessageFor(model => model.Price)
+                </div>
+                <div class="managerDeleteBTNS">
+                    <input type="submit" value="Save" />
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+                <br />
+            </fieldset>
+        }
+        </div>
+    </div>

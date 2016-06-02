@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "The Big Event 2015";
+}
+        <div class="body_wrapper">
+  
+
+            <div class="middle-content">
+                
+                <div class="popular_events">
+                    <p>Popular Events</p>
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Store", new { searchString = 100m })"><div class="event1"><img src="../../Content/themes/base/images/100m.jpg"> <div class="event_text"><p class="event-title">100m Sprint</p><p class="Date">January 18th </p><p class="Arena">Wembley Stadium</p></div></div></a></li>
+                        <li><a href="@Url.Action("Index", "Store", new { searchString = "javelin" })"><div class="event2"><img src="../../Content/themes/base/images/javlin.jpg"> <div class="event_text"><p class="event-title">Javelin</p><p class="Date">January 20th </p><p class="Arena">Oval Stadium</p></div></div></a></li>
+                        <li><a href="@Url.Action("Index", "Store", new { searchString = "high jump" })"><div class="event3"><img src="../../Content/themes/base/images/highjump.jpg"> <div class="event_text"><p class="event-title">High Jump</p><p class="Date">January 22th </p><p class="Arena">Olympic Stadium</p></div></div></a></li>
+                        <li><a href="@Url.Action("Index", "Store", new { searchString = "weight lifting" })"><div class="event4"><img src="../../Content/themes/base/images/lifting.jpg"> <div class="event_text"><p class="event-title">Weightlifting</p><p class="Date">January 24th </p><p class="Arena">Riverbank Arena</p></div></div></a></li>
+                    </ul>
+                </div>
+
+                <div class="advertisements">
+                    <div class="adds1"><a href="http://www.nike.com/gb/en_gb/?ref=https%3A%2F%2Fwww.google.co.uk%2F>" target="_blank"><img src="../../Content/themes/base/images/nike.jpg" width="150px" height="75px" /></a></div>
+                    <div class="adds2"><a href="http://www.samsung.com/uk/home" target="_blank"><img src="../../Content/themes/base/images/samsung.jpg" width="150px" height="75px" /></a></div>
+                    <div class="adds3"><a href="http://www.mcdonalds.com/us/en/home.html" target="_blank"><img src="../../Content/themes/base/images/mcd.gif" width="150px" height="75px" /></a></div>
+                </div>
+
+                <div class="latest-events-logo">
+                    Upcoming Events
+                </div>
+
+                <div class="latest-events">
+                    <div class="new-event1-image"><a href="@Url.Action("Index", "Store", new { eventType = "cricket" })"><img src="../../Content/themes/base/images/cricket.jpg"></a></div>
+                    <div class="new-event2-image"><a href="@Url.Action("Index", "Store", new { eventType = "football" })"><img src="../../Content/themes/base/images/football.jpg"></a></div>
+                    <div class="new-event3-image"><a href="@Url.Action("Index", "Store", new { eventType = "tennis" })"><img src="../../Content/themes/base/images/tennis.jpg"></a></div>
+                    <div class="new-event4-image"><a href="@Url.Action("Index", "Store", new { eventType = "swimming" })"><img src="../../Content/themes/base/images/swimming.jpg"></a></div>
+                    <div class="new-event5-image"><a href="@Url.Action("Index", "Store", new { eventType = "hockey" })"><img src="../../Content/themes/base/images/hockey.jpg"></a></div>
+
+                    <div class="new-event1">Cricket<p class="price">£50.00</p><p class="descriptions">Cricket from all the best teams in the world</p><a href="@Url.Action("Index", "Store", new { eventType = "cricket" })" class="dates">View Dates</a></div>
+                    <div class="new-event2">Football<p class="price">£50.00</p><p class="descriptions">Football from all the best teams in the world</p><a href="@Url.Action("Index", "Store", new { eventType = "football" })" class="dates">View Dates</a></div>
+                    <div class="new-event3">Tennis<p class="price">£50.00</p><p class="descriptions">Tennis from all the best players in the world</p><a href="@Url.Action("Index", "Store", new { eventType = "tennis" })" class="dates">View Dates</a></div>
+                    <div class="new-event4">Swimming<p class="price">£50.00</p><p class="descriptions">Swimming from all the best athletes in the world</p><a href="@Url.Action("Index", "Store", new { eventType = "swimming" })" class="dates">View Dates</a></div>
+                    <div class="new-event5">Hockey<p class="price">£50.00</p><p class="descriptions">Hockey from all the best teams in the world</p><a href="@Url.Action("Index", "Store", new { eventType = "hockey" })" class="dates">View Dates</a></div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
